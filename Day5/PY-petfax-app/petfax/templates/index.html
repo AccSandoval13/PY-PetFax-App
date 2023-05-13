@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PetFax | Pet Adoption Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> <!-- this is a link to the css file -->
+  </head>
+  <body>
+    <div class="container">
+    
+      <h1>Welcome to PetFax !</h1>
+      <div class="callout">
+        Welcome To PetFaxonia ! We are a no-kill shelter that has been rescuing since 1908 
+      </div>
+      <div class=""pets-container> 
+      {% for pet in pets %} <!-- this is a for loop --> 
+      <div class="pet"> 
+        <h2>{{ pet.pet_name }}</h2>
+      <img src="{{ pet.pet_photo }}" alt="{{ pet.pet_alt }}"> 
+      <a href="/pets/{{ pet.pet_id }}"> Learn more about {{ pet.pet_name }}</a> 
+      </div>
+      {% endfor %}
+      </div> 
+      <div class="callout">
+        <a href="/facts/new">Submit a Fact</a>
+      </div>
+    </div>
+    
+  </body>
+</html>
