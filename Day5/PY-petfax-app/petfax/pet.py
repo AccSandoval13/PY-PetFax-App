@@ -3,7 +3,7 @@ import json
 
 pets = json.load(open('pets.json')) 
 
-bp = Blueprint('pet', __name__, url_prefix='/pets')
+bp = Blueprint('pet', __name__, url_prefix='/pets') # create blueprint 
 
 @bp.route('/') # static route to show all pets 
 def index():
